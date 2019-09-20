@@ -1,0 +1,14 @@
+{
+  "name": "diaonlinebot",
+  "version": "1.0.0",
+  "description": "diaonline",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "namutree0345",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  }
+}
