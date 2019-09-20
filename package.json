@@ -9,6 +9,7 @@
   "author": "namutree0345",
   "license": "MIT",
   "dependencies": {
-    "discord.js": "^11.5.1"
+    "discord.js": "^11.5.1",
+    "mongoose": "^5.7.1"
   }
 }

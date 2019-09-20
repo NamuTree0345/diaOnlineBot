@@ -1,5 +1,6 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
+let mongoURI = process.env.MONGO_URI
 
 client.on('ready', () => {
     console.log('connected')
@@ -22,6 +23,7 @@ client.on('message', (msg) => {
         } catch {}
     }
     if (msg.content.startsWith("/럭키상자")) {
+
         // || msg.author.id === '483148796994387973'
         if (msg.member.hasPermission('ADMINISTRATOR')) {
             msg.channel.send('럭키상자를 뽑으시겠습니까? (제한시간 5초)')
