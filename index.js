@@ -1,6 +1,17 @@
+require('dotenv').config()
+
 const Discord = require('discord.js')
 const client = new Discord.Client()
 let mongoURI = process.env.MONGO_URI
+const mongoose = require('mongoose')
+const db = mongoose.connection
+
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useFindAndModify: false }).then(() => {
+    console.log('DB서버와 연결되었습니다!')
+}).catch(Err => {
+    console.error(`오류: ${Err}`)
+    return process.exit()
+})
 
 client.on('ready', () => {
     console.log('connected')
@@ -64,7 +75,7 @@ client.on('message', (msg) => {
                         return ranNum;
                     }
                     msg.channel.send('' + generateRandom(1, 10))
-                    switch (generateRandom(1, 10)) {
+                    switch (generateRandom(1, 11)) {
                         case 1:
                             msg.channel.send(`축하합니다! **처벌 면제권**이 당첨되셨습니다!`)
                             break
@@ -94,6 +105,9 @@ client.on('message', (msg) => {
                             break
                         case 10:
                             msg.channel.send(`축하합니다! **확정강화권 조각**이 당첨되셨습니다!`)
+                            break
+                        default:
+                            msg.channel.send(`어이쿠! ${user}님! 꽝입니다! ~~개꿀~~`)
                             break
                     }
 
