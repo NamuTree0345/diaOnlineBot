@@ -9,11 +9,11 @@ client.on('ready', () => {
 
 client.on('message', (msg) => {
     if (msg.content === '/봇알림') {
-        msg.channel.send('봇알림 역할을 추가하는 중입니다... 2~3초 안에 반응이 없을경우 오류입니다.')
+        msg.channel.send('봇알림 역할을 추가하는 중입니다...')
         try {
             msg.member.addRole('622379816817131531')
             msg.channel.send('당신은 이제 봇 알림을 받습니다!')
-        } catch {}
+        } catch { msg.channel.send('봇알림 역할을 추가에 실패하였습니다!') }
     }
     if (msg.content === '/봇알림안받기') {
         msg.channel.send('봇알림 역할을 없에는 중입니다... 2~3초 안에 반응이 없을경우 오류입니다.')
