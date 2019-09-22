@@ -6,7 +6,7 @@ let mongoURI = process.env.MONGO_URI
 const mongoose = require('mongoose')
 const db = mongoose.connection
 
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useFindAndModify: false }).then(() => {
+mongoose.connect(process.env.MONGO_URI).then(() => {
     console.log('DB서버와 연결되었습니다!')
 }).catch(Err => {
     console.error(`오류: ${Err}`)
